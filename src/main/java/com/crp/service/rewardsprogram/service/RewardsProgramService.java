@@ -1,4 +1,8 @@
 package com.crp.service.rewardsprogram.service;
 
-public class RewardsProgramService {
+import com.crp.service.rewardsprogram.model.Rewards;
+
+public interface RewardsProgramService {
+
+    public Rewards getRewardsByCustomerId(int id);
 }

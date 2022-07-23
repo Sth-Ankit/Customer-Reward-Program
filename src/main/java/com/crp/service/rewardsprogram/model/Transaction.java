@@ -11,10 +11,10 @@ public class Transaction
 {
 
     @Column(name = "TRANSACTION_ID")
-    private Long transactionId;
+    private int transactionId;
 
     @Column(name="CUSTOMER_ID")
-    private Long customerId;
+    private int customerId;
 
     @Column(name = "TRANSACTION_DATE")
     private Timestamp transactionDate;
@@ -22,4 +22,35 @@ public class Transaction
     @Column(name = "TRANSACTION_AMOUNT")
     private double transactionAmount;
 
+    public int getTransactionId() {
+        return transactionId;
+    }
+
+    public void setTransactionId(int transactionId) {
+        this.transactionId = transactionId;
+    }
+
+    public int getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
+    }
+
+    public Timestamp getTransactionDate() {
+        return transactionDate;
+    }
+
+    public void setTransactionDate(Timestamp transactionDate) {
+        this.transactionDate = transactionDate;
+    }
+
+    public double getTransactionAmount() {
+        return transactionAmount;
+    }
+
+    public void setTransactionAmount(double transactionAmount) {
+        this.transactionAmount = transactionAmount;
+    }
 }
