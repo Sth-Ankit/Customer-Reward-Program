@@ -1,14 +1,13 @@
 package com.crp.service.rewardsprogram.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Table(name = "Customer")
+@Table(name = "CUSTOMER")
 public class Customer
 {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "CUSTOMER_ID")
     private int customerId;
     @Column(name = "CUSTOMER_NAME")

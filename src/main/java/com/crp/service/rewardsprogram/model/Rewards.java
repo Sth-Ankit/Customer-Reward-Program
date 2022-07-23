@@ -3,46 +3,52 @@ package com.crp.service.rewardsprogram.model;
 public class Rewards
 {
     private int customerId;
-    private int firstMonthRewardPoints;
-    private int secondMonthRewardPoints;
-    private int thirdMonthRewardPoints;
-    private int totalRewards;
+    private double firstMonthRewardPoints;
+    private double secondMonthRewardPoints;
+    private double thirdMonthRewardPoints;
+    private double totalRewards;
 
-    public int getCustomerId(){ return customerId;}
+    public Rewards(int id, double points)
+    {
+        this.customerId = id;
+        this.totalRewards = points;
+    }
+
+    public double getCustomerId(){ return customerId;}
 
     public void setCustomerId(int customerId) {
         this.customerId = customerId;
     }
 
-    public int getFirstMonthRewardPoints() {
+    public double getFirstMonthRewardPoints() {
         return firstMonthRewardPoints;
     }
 
-    public int getSecondMonthRewardPoints() {
+    public double getSecondMonthRewardPoints() {
         return secondMonthRewardPoints;
     }
 
-    public int getThirdMonthRewardPoints() {
+    public double getThirdMonthRewardPoints() {
         return thirdMonthRewardPoints;
     }
 
-    public int getTotalRewards() {
+    public double getTotalRewards() {
         return totalRewards;
     }
 
-    public void setFirstMonthRewardPoints(int firstMonthRewardPoints) {
-        this.firstMonthRewardPoints = firstMonthRewardPoints;
+    public void setFirstMonthRewardPodoubles(double points) {
+        this.firstMonthRewardPoints = points;
     }
 
-    public void setSecondMonthRewardPoints(int secondMonthRewardPoints) {
-        this.secondMonthRewardPoints = secondMonthRewardPoints;
+    public void setSecondMonthRewardPodoubles(double points) {
+        this.secondMonthRewardPoints = points;
     }
 
-    public void setThirdMonthRewardPoints(int thirdMonthRewardPoints) {
-        this.thirdMonthRewardPoints = thirdMonthRewardPoints;
+    public void setThirdMonthRewardPodoubles(double points) {
+        this.thirdMonthRewardPoints = points;
     }
 
-    public void setTotalRewards(int totalRewards) {
+    public void setTotalRewards(double totalRewards) {
         this.totalRewards = totalRewards;
     }
 }

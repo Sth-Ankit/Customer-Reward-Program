@@ -4,5 +4,5 @@ import com.crp.service.rewardsprogram.model.Rewards;
 
 public interface RewardsProgramService {
 
-    public Rewards getRewardsByCustomerId(int id);
+    public Rewards getRewardsByCustomerId(int customerId);
 }

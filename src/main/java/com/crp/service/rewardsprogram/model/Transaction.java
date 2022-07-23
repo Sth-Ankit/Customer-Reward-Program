@@ -1,15 +1,15 @@
 package com.crp.service.rewardsprogram.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.security.Timestamp;
 
 @Entity
-@Table
+@Table(name = "TRANSACTION")
 public class Transaction
 {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "TRANSACTION_ID")
     private int transactionId;
 
