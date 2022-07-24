@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.xml.ws.Response;
 import java.util.List;
 
 @RestController
@@ -22,11 +23,12 @@ public class RewardsProgramController {
     RewardsProgramService rewardsProgramService;
     @Autowired
     CustomerRepository customerRepository;
-    @GetMapping("/customers")
-    public List<Customer> findCustomerAll() {
-        return customerRepository.findAll();
+    @GetMapping(value = "/customers")
+    public ResponseEntity<List<Customer>> findCustomerAll() {
+        List<Customer> temp = customerRepository.findAll();
+        return ResponseEntity.ok(temp);
     }
-    @GetMapping(value="/{customerId}",produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping("/{customerId}")
     public ResponseEntity<Customer> findCustomer(@PathVariable("customerId") int customerId) {
 //        return
         Customer temp = customerRepository.findById(customerId);
