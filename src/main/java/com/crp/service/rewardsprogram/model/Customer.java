@@ -1,0 +1,15 @@
+package com.crp.service.rewardsprogram.model;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "CUSTOMER")
+public class Customer
+{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "CUSTOMER_ID")
+    private int customerId;
+    @Column(name = "CUSTOMER_NAME")
+    private String customerName;
+}
