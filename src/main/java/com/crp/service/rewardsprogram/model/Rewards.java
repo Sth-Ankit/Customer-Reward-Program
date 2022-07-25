@@ -8,10 +8,13 @@ public class Rewards
     private double thirdMonthRewardPoints;
     private double totalRewards;
 
-    public Rewards(int id, double points)
+    public Rewards(int id, double firstMonthPoints, double secondMonthPoints,double thirdMonthPoints)
     {
         this.customerId = id;
-        this.totalRewards = points;
+        this.firstMonthRewardPoints = firstMonthPoints;
+        this.secondMonthRewardPoints =secondMonthPoints ;
+        this.thirdMonthRewardPoints = thirdMonthPoints;
+        this.totalRewards += firstMonthRewardPoints + secondMonthRewardPoints + thirdMonthRewardPoints;
     }
 
     public double getCustomerId(){ return customerId;}

@@ -23,23 +23,24 @@ public class RewardsProgramController {
     RewardsProgramService rewardsProgramService;
     @Autowired
     CustomerRepository customerRepository;
+
     @GetMapping(value = "/customers")
     public ResponseEntity<List<Customer>> findCustomerAll() {
-        List<Customer> temp = customerRepository.findAll();
-        return ResponseEntity.ok(temp);
+
+        return ResponseEntity.ok(customerRepository.findAll());
     }
     @GetMapping("/{customerId}")
     public ResponseEntity<Customer> findCustomer(@PathVariable("customerId") int customerId) {
-//        return
-        Customer temp = customerRepository.findById(customerId);
 
-        return new ResponseEntity<>(temp, HttpStatus.OK);
+        return ResponseEntity.ok(customerRepository.findById(customerId));
     }
 
     @GetMapping(value = "/rewards/{customerId}")
-    public Rewards getRewardsByCustomerId()
+    public ResponseEntity<Rewards> getRewardsByCustomerId(@PathVariable("customerId") int customerId)
     {
+        Customer customer = customerRepository.findById(customerId);
+        Rewards rewardPoints = rewardsProgramService.getRewardsByCustomerId(customerId);
+        return ResponseEntity.ok(rewardPoints);
 
-        return null;
     }
 }
